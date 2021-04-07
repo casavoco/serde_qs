@@ -9,6 +9,8 @@ use crate::error::Error as QsError;
 use actix_web;
 #[cfg(feature = "actix2")]
 use actix_web2 as actix_web;
+#[cfg(feature = "actix4")]
+use actix_web4 as actix_web;
 
 use actix_web::dev::Payload;
 use actix_web::{Error as ActixError, FromRequest, HttpRequest, HttpResponse, ResponseError};
@@ -36,6 +38,8 @@ impl ResponseError for QsError {
 /// # use actix_web;
 /// # #[cfg(feature = "actix2")]
 /// # use actix_web2 as actix_web;
+/// # #[cfg(feature = "actix4")]
+/// # use actix_web4 as actix_web;
 /// use actix_web::{web, App, HttpResponse};
 /// use serde_qs::actix::QsQuery;
 ///
@@ -134,6 +138,8 @@ where
 /// # use actix_web;
 /// # #[cfg(feature = "actix2")]
 /// # use actix_web2 as actix_web;
+/// # #[cfg(feature = "actix4")]
+/// # use actix_web4 as actix_web;
 /// use actix_web::{error, web, App, FromRequest, HttpResponse};
 /// use serde_qs::actix::QsQuery;
 /// use serde_qs::Config as QsConfig;
